@@ -9,7 +9,7 @@ import { Comment, NewComment } from './comments.model';
   providedIn: 'root',
 })
 export class CommentsApiService {
-  commentsUrl: string = `/api/data/comments`;
+  commentsUrl: string = `https://cookbook-back-end.onrender.com/data/comments`;
 
   private errorService = inject(ErrorService);
   private httpClient = inject(HttpClient);
