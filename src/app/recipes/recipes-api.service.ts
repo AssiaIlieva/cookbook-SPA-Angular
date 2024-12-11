@@ -9,7 +9,7 @@ import { ErrorService } from '../shared/error.service';
   providedIn: 'root',
 })
 export class ApiRecipesService {
-  recipesUrl: string = `/api/recipes`;
+  recipesUrl: string = `/api/data/recipes`;
   last4QuaryUrl: string = '?sortBy=_createdOn%20desc&offset=0&pageSize=4';
 
   private errorService = inject(ErrorService);
