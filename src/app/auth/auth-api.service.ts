@@ -9,7 +9,7 @@ import { LoggedUser } from './user.model';
   providedIn: 'root',
 })
 export class AuthApiService {
-  private usersUrl = 'https://cookbook-back-end.onrender.com/users';
+  private usersUrl = '/api/users';
   private httpClient = inject(HttpClient);
   private errorService = inject(ErrorService);
 

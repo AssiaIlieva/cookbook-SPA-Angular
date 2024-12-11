@@ -1,7 +1,8 @@
 import { HttpInterceptorFn, HttpErrorResponse } from '@angular/common/http';
 import { catchError, throwError } from 'rxjs';
+import { environment } from '../environment';
 
-const apiUrl = 'https://cookbook-back-end.onrender.com';
+const { apiUrl } = environment;
 const API = '/api';
 
 export const appInterceptor: HttpInterceptorFn = (req, next) => {
