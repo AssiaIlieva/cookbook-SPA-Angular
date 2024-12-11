@@ -1,0 +1,48 @@
+<div class="panel-wrapper">
+  @if(isFetching() && !error()){
+  <app-loader />
+  } @if (recipes().length === 0) {
+  <p class="fallback-text">Unfortunately, no recipes could be found.</p>
+  } @if(recipes()) {
+  <div class="search-panel">
+    <div class="content">
+      <div class="title">
+        <h1>Search recipe by type</h1>
+      </div>
+      <div class="border"></div>
+      <h2>Find recipes here...</h2>
+      <div class="searchbox">
+        <form (submit)="onSearch(recipeType())">
+          <select
+            id="recipeType"
+            name="recipeType"
+            class="input"
+            [(ngModel)]="recipeType"
+          >
+            <option value="">Select Recipe Type</option>
+            <option value="Soup">Soup</option>
+            <option value="Appetizer">Appetizer</option>
+            <option value="Main Course">Main Course</option>
+            <option value="Dessert">Dessert</option>
+          </select>
+          <div class="button">
+            <button type="submit">
+              <i
+                class="fa fa-search"
+                aria-hidden="true"
+                style="color: white"
+              ></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <ul class="container">
+    @for (recipe of recipes(); track recipe._id) {
+    <app-recipe-card [recipe]="recipe" />
+    }
+  </ul>
+  }
+</div>

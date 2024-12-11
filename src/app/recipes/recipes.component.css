@@ -1,0 +1,130 @@
+.fallback-text {
+  text-align: center;
+  color: #414141;
+  font-weight: 600;
+  font-size: 32px;
+  margin-top: 200px;
+}
+.container {
+  max-width: 1600px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.panel-wrapper {
+  width: 100%;
+  min-height: 68vh;
+  max-width: 1560px;
+  margin: 30px auto;
+  padding-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+.panel-wrapper .border {
+  border-bottom: 1px solid #dadacb;
+}
+.panel-wrapper .content p {
+  padding-top: 5px;
+  line-height: 1rem;
+  font-size: 0.7rem;
+}
+
+.search-panel {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  background: #f3f3ee;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
+
+.search-panel .content {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+
+.search-panel .content h2 {
+  font-size: 18px;
+  color: #cf9359;
+  padding-top: 5px;
+  font-weight: normal;
+  padding-bottom: 5px;
+}
+
+.search-panel .title h1 {
+  color: #50453b;
+  font-weight: normal;
+  font-size: 1.5rem;
+  padding: 0;
+}
+
+.search-panel .border {
+  border-bottom: 1px solid #dadacb;
+  margin-top: 15px;
+}
+
+.search-panel .searchbox {
+  width: 100%;
+}
+
+.search-panel .input {
+  width: 80%;
+  max-width: 160px;
+  height: 40px;
+  float: left;
+  background: #e5e2d3;
+  border: 0px;
+  font-size: 18px;
+  color: #414141;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+.search-panel .button button {
+  width: 40px;
+  height: 40px;
+  background: url("/icon-search.png") no-repeat center #cf9359;
+}
+
+.button button {
+  border: none;
+  background-color: #cf9359;
+  color: transparent;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 400px) {
+  .search-panel {
+    width: 100%;
+    max-width: 90%;
+  }
+
+  .search-panel .input {
+    width: 80%;
+    max-width: 80%;
+  }
+
+  .search-panel .content {
+    width: 100%;
+    padding: 10px;
+  }
+}

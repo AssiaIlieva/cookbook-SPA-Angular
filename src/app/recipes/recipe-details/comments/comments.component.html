@@ -1,0 +1,12 @@
+<div class="commentsSection">
+  <h2>Comments</h2>
+  <ul class="container">
+    @for (comment of comments(); track comment._id) {
+    <li class="comment">
+      <hr className="commentSeparator" />
+      <p>{{ comment._createdOn | date : "dd/MM/yyyy HH:mm" }}</p>
+      <p>{{ comment.author.username }}: {{ comment.text }}</p>
+    </li>
+    }
+  </ul>
+</div>

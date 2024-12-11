@@ -1,0 +1,25 @@
+<div class="panel-wrapper">
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>Welcome to Shared Cookbook</h1>
+      <div class="hero-image">
+        <img src="home_image_400x267.jpg" alt="" />
+      </div>
+      <h2>Your recipe sharing journey starts here</h2>
+    </div>
+  </section>
+  <div class="cards-wrapper">
+    @if(isFetching() && !error() ){
+    <app-loader />
+    } @if(recipes().length === 0) {
+    <p class="fallback-text">Unfortunately, no recipes are shared yet!</p>
+    }@if (recipes().length > 0) {
+    <h3>Check Our Newest Recipes</h3>
+    <ul class="cards-container">
+      @for (recipe of recipes(); track recipe._id) {
+      <app-recipe-card [recipe]="recipe" />
+      }
+    </ul>
+    }
+  </div>
+</div>

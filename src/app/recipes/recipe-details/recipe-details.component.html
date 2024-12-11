@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="cardWrapper">
+    <div class="card">
+      <img
+        [src]="recipe().imageURL"
+        [alt]="recipe().recipeName"
+        class="image"
+      />
+      <div class="details">
+        <div class="title">
+          <h3>{{ recipe().recipeType }}</h3>
+          <h1 class="borderBottom">{{ recipe().recipeName }}</h1>
+        </div>
+        <div class="content">
+          <h2>Description</h2>
+          <p>{{ recipe().description }}</p>
+          <div class="border"></div>
+          <h2>Preparation Time</h2>
+          <p>{{ recipe().preparationTime }} min.</p>
+          <div class="border"></div>
+          <h2>Ingredients</h2>
+          <p>{{ recipe().ingredients }}</p>
+          <div class="border"></div>
+          <h2>Preparation Instructions</h2>
+          <p>{{ recipe().instructions }}</p>
+
+          @if(isOwner()) {
+          <div class="buttonContainer">
+            <a [routerLink]="['/recipe-edit', recipe()._id]" class="button">
+              Edit
+            </a>
+            <button class="button" (click)="deleteRecipe()">Delete</button>
+          </div>
+          }
+        </div>
+
+        @if(isFetching()) {
+        <app-loader></app-loader>
+        } @if(commentsReady()) {
+        <app-comments [comments]="comments()"></app-comments>
+        } @if(isAuthenticated()) {
+        <button class="button" (click)="toggleCommentForm()">
+          {{ isCommentFormVisible() ? "Close Comment Form" : "Add Comment" }}
+        </button>
+        } @if(isCommentFormVisible()) {
+        <app-add-comment
+          (submitComment)="onCommentSubmit($event)"
+          (close)="toggleCommentForm()"
+        ></app-add-comment>
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="back-buttonContainer">
+    <a routerLink="/recipes" class="button">Go back to recipe page</a>
+  </div>
+</div>

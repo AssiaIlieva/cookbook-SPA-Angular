@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+}
+
+form {
+  width: 90%;
+  max-width: 40rem;
+  margin: 6rem auto;
+  padding: 2rem;
+  background: linear-gradient(180deg, #f3f3ee, #e9e0c6);
+  border-radius: 8px;
+  box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.5);
+}
+
+.content {
+  flex: 1;
+  min-height: 78vh;
+}
+
+.control-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.control {
+  flex: 1;
+}
+
+.control label {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 0.2rem;
+  color: #414141;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.control input {
+  display: block;
+  width: 100%;
+  max-width: 15rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #cf9359;
+  background-color: #f3f3ee;
+  color: #142020;
+}
+
+.control-error {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  color: #cf2a0a;
+  height: 0.5rem;
+  padding: 0.25rem 0 0 0;
+  height: 1.5rem;
+}
+
+.control-error p {
+  margin: 0;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: none;
+  background-color: #cf9359;
+  color: #d9e2f1;
+  cursor: pointer;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #ce7b2d;
+}
+
+.control:has(.ng-invalid.ng-touched.ng-dirty) label {
+  color: #cf2a0a;
+}
+
+input.ng-invalid.ng-touched.ng-dirty {
+  background-color: #fbdcd6;
+  border-color: #f84e2c;
+}
+
+.register-link {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+
+.register-link span {
+  padding-right: 15px;
+}
+
+@media (max-width: 768px) {
+  .control-row {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+
+  .control input {
+    max-width: 100%;
+  }
+
+  .button {
+    margin: 1rem auto;
+    display: block;
+  }
+}

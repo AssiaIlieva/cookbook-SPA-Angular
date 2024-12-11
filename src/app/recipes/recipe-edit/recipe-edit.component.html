@@ -1,0 +1,115 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <h2>Edit the recipe</h2>
+  <p>Update your recipe details 👩‍🍳</p>
+  <div class="control-row">
+    <div class="control">
+      <label for="recipeName">Recipe Name</label>
+      <input
+        id="recipeName"
+        type="text"
+        name="RecipeName"
+        formControlName="recipeName"
+      />
+    </div>
+  </div>
+  <div class="control-row">
+    <div class="control">
+      <label for="recipeType">Recipe Type</label>
+      <select id="recipeType" name="recipeType" formControlName="recipeType">
+        <option value="" disabled selected>
+          Please, choose the recipe type
+        </option>
+        <option value="Soup">Soup</option>
+        <option value="Appetizer">Appetizer</option>
+        <option value="Main Course">Main Course</option>
+        <option value="Dessert">Dessert</option>
+      </select>
+    </div>
+  </div>
+  <div class="control-row">
+    <div class="control">
+      <label for="preparationTime">Preparation Time in Minutes</label>
+      <input
+        id="preparationTime"
+        type="number"
+        name="preparationTime"
+        formControlName="preparationTime"
+      />
+    </div>
+  </div>
+
+  <div class="control-row">
+    <div class="control">
+      <label for="imageURL">Image URL</label>
+      <input
+        id="imageURL"
+        type="text"
+        name="imageURL"
+        formControlName="imageURL"
+      />
+    </div>
+  </div>
+
+  <div class="control-row">
+    <div class="control">
+      <label for="description">Short Description</label>
+      <textarea
+        id="description"
+        rows="4"
+        name="description"
+        formControlName="description"
+      ></textarea>
+    </div>
+  </div>
+  <div class="control-row">
+    <div class="control">
+      <label for="ingredients">Ingredients</label>
+      <textarea
+        id="ingredients"
+        rows="3"
+        name="ingredients"
+        formControlName="ingredients"
+      ></textarea>
+    </div>
+  </div>
+  <div class="control-row">
+    <div class="control">
+      <label for="instructions">Preparation instructions</label>
+      <textarea
+        id="instructions"
+        rows="6"
+        name="instructions"
+        formControlName="instructions"
+      ></textarea>
+    </div>
+  </div>
+  @if(recipeNameIsInvalid){
+  <p class="control-error">
+    Please, enter a valid Recipe Name min 2 characters
+  </p>
+  } @if(recipeTypeIsInvalid){
+  <p class="control-error">Please, enter a valid Recipe Type</p>
+  } @if(preparationTimeIsInvalid){
+  <p class="control-error">
+    Please, enter a valid Preparation time min 1 max 480 min
+  </p>
+  } @if(imageURLIsInvalid){
+  <p class="control-error">Please, enter a valid URL address</p>
+  } @if(descriptionIsInvalid){
+  <p class="control-error">
+    Please, enter a valid Description min 10 characters
+  </p>
+  } @if(ingredientsIsInvalid){
+  <p class="control-error">
+    Please, enter a valid Ingredients min 10 characters
+  </p>
+  } @if(instructionsIsInvalid){
+  <p class="control-error">
+    Please, enter a valid Instructions min 10 characters
+  </p>
+  }
+  <p class="form-actions">
+    <button type="reset" class="button button-flat">Reset</button>
+    <button type="submit" class="button">Submit</button>
+  </p>
+</form>

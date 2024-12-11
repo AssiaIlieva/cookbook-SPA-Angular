@@ -1,0 +1,35 @@
+/* Футер */
+footer {
+  background: url("/pattern-1.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  color: #cf9359;
+  margin-top: auto;
+}
+
+.footer {
+  width: 960px;
+  text-align: center;
+  color: #cf9359;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  overflow: hidden;
+}
+
+.footer p {
+  margin-bottom: 10px;
+}
+
+.footer a {
+  color: #cf9359;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}

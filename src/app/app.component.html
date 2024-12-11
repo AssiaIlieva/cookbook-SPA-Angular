@@ -1,0 +1,9 @@
+@if (error()){
+<app-error-modal title="An error occured" [message]="error()" /> }
+<app-authenticate>
+  <app-header />
+  <div class="content">
+    <router-outlet />
+  </div>
+  <app-footer />
+</app-authenticate>

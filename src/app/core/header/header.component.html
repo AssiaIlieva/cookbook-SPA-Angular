@@ -1,0 +1,47 @@
+<header>
+  <div class="header">
+    <div class="header-left-panel">
+      <div class="logo-wrap">
+        <div class="logo">
+          <h2>COOK TOGETHER, SHARE FOREVER</h2>
+          <h1>SHARED COOKBOOK</h1>
+        </div>
+      </div>
+    </div>
+    <div class="header-right-panel">
+      <div class="header-right-panel-top">
+        <p *ngIf="user$ | async as user">Welcome {{ user.username }}</p>
+      </div>
+
+      <div class="menu">
+        <ul>
+          <li class="marRight20">
+            <a routerLink="/home" routerLinkActive="active">home</a>
+          </li>
+          <li class="marRight20">
+            <a routerLink="recipes" routerLinkActive="active">recipes</a>
+          </li>
+
+          <li *ngIf="!(user$ | async)">
+            <a routerLink="login" routerLinkActive="active">Login</a>
+          </li>
+          <li *ngIf="!(user$ | async)">
+            <a routerLink="register" routerLinkActive="active">Register</a>
+          </li>
+
+          <li *ngIf="user$ | async">
+            <a routerLink="recipe-create" routerLinkActive="active"
+              >Create recipe</a
+            >
+          </li>
+          <li *ngIf="user$ | async">
+            <a routerLink="profile" routerLinkActive="active">Your space</a>
+          </li>
+          <li *ngIf="user$ | async">
+            <a (click)="logout()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>

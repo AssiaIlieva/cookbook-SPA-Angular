@@ -1,0 +1,28 @@
+<div class="panel-wrapper">
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 *ngIf="user$ | async as user">Welcome {{ user.username }}</h1>
+
+      <div class="hero-image">
+        <img src="profile_img.png" alt="Profile Image" />
+      </div>
+      <h2>Your Recipe Collection</h2>
+    </div>
+  </section>
+
+  <div class="recipes-wrapper">
+    @if(isFetching() && !error()) {
+    <app-loader />
+    } @if(error()) {
+    <p class="error-text">{{ error() }}</p>
+    } @if(recipes().length === 0) {
+    <p class="fallback-text">You have no recipes shared yet.</p>
+    } @if(recipes().length > 0) {
+    <ul class="cards-container">
+      @for (recipe of recipes(); track recipe._id) {
+      <app-recipe-card [recipe]="recipe" />
+      }
+    </ul>
+    }
+  </div>
+</div>

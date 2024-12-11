@@ -1,0 +1,65 @@
+<div class="content">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h2>Welcome on board!</h2>
+    <p>We just need a little bit of data from you to get you started 🚀</p>
+    <div class="control-row">
+      <div class="control">
+        <label for="username">Username</label>
+        <input
+          id="username"
+          type="text"
+          name="username"
+          formControlName="username"
+        />
+      </div>
+      <div class="control">
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" formControlName="email" />
+      </div>
+    </div>
+
+    <div class="control-row">
+      <div class="control">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          name="password"
+          formControlName="password"
+        />
+      </div>
+
+      <div class="control">
+        <label for="confirm-password">Confirm Password</label>
+        <input
+          id="confirm-password"
+          type="password"
+          name="confirm-password"
+          formControlName="confirmPassword"
+        />
+      </div>
+    </div>
+
+    <div class="register-link">
+      <span>If you already have a profile click:</span
+      ><a routerLink="/login">Here</a>
+    </div>
+
+    @if(usernamelIsInvalid){
+    <p class="control-error">Please, enter a valid username</p>
+    } @if(emailIsInvalid){
+    <p class="control-error">Please, enter a valid email address</p>
+    } @if(passwordIsInvalid){
+    <p class="control-error">
+      Please, enter a valid password, at least 6 characters long
+    </p>
+    } @if(confirmPasswordIsInvalid){
+    <p class="control-error">Passwords mismatch!</p>
+    }
+
+    <p class="form-actions">
+      <button type="reset" class="button button-flat">Reset</button>
+      <button type="submit" class="button">Sign up</button>
+    </p>
+  </form>
+</div>
