@@ -9,11 +9,11 @@
     </div>
   </section>
   <div class="cards-wrapper">
-    @if(isFetching() && !error() ){
+    @if(isFetching()) {
     <app-loader />
-    } @if(recipes().length === 0) {
+    } @if(recipes().length === 0 && !isFetching()) {
     <p class="fallback-text">Unfortunately, no recipes are shared yet!</p>
-    }@if (recipes().length > 0) {
+    } @if(recipes().length > 0) {
     <h3>Check Our Newest Recipes</h3>
     <ul class="cards-container">
       @for (recipe of recipes(); track recipe._id) {
